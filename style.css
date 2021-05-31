@@ -88,6 +88,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 20px;
+  min-height: 70vh;
 }
 .card {
   padding: 1rem;

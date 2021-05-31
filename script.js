@@ -1,7 +1,6 @@
 const form = document.querySelector(".form");
 const query = document.querySelector(".query");
 const user_card = document.querySelector(".user_card");
-const footer = document.querySelector('.footer')
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -50,16 +49,26 @@ function getData() {
       return res.json();
     })
     .then((data) => {
+      const uu = data.data.search.nodes[0];
+      console.log(uu.name)
+
       const result = data.data.search.nodes;
       console.log(result.map(r => r.name))
 
       result.map(user => {
-        `<div class="user_card">
+        `<div class="user_profile">
+          <img src=${user.avatarUrl} class="img" />
           <h4 class="username">${user.name}</h4>
-        </div>`
+        </div>
+        <div class="user_repo">
+          <div class="repo">
+            
+          </div>
+        </div>
+        `
       })
 
-      footer.append(result);
+
     })
     .catch(function (err) {
       console.error(err);
