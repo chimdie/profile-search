@@ -1,0 +1,111 @@
+:root{
+    --primary: #cdd9e5;
+    --grey-1: #2d333b;
+    --grey-2: #22272e;
+    --grey-3: #768390;
+    --grey-4: #545d68;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+}
+body{
+    background-color: var(--grey-2);
+    color: var(--primary)
+}
+a{
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--grey-1);
+    padding: 1rem;
+    height: 64px;
+}
+.top button{
+    background-color: inherit;
+    border: none;
+}
+.iconify{
+    background-color: inherit;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+.fab{
+    color: var(--primary);
+    font-size: 2rem;
+}
+.far{
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+h3 {
+  color: #eee;
+  margin: 30px 0;
+}
+
+.form {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem;
+  /* height: 40vh; */
+}
+
+.query {
+  font-weight: 700;
+  padding: .70rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.btn:hover {
+  color: #4b413b;
+}
+
+.user_card {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 20px;
+}
+.card {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card > .img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.card > .username {
+  color: #fff;
+}
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+}
+
