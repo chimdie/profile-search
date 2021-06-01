@@ -62,47 +62,55 @@ function getData() {
     .then((data) => {
       const user = data.data.search.edges[0].node;
       const repo = data.data.search.edges[0].node.repositories.nodes;
-      console.log(repo.map(rr => rr.name))
-       
-      const markup = `
-      <div class="repo_container">
-        <div class="profile">
-          <img class="user_img" src=${user.avatarUrl}/>
-          <p class="username">${user.name}</p>
-          <p class="bio">${user.bio}</p>
-        </div>
 
-        <div class="repos">
-          <p class="repo_name">${repo.name}</p>
-          <p class="repo_desc">${repo.description}</p>
-        </div>
-      </div>
-      `
-      repo.map(r => {
-        `
-        <p class="repo-name">${r.name}</p>
-        `
-      })
+      // Parent container
+      const repo_container = document.createElement("div");
+      repo_container.classList.add("repo_container");
+
+      // Profile
+      const profile = document.createElement("div");
+      profile.classList.add("profile");
+
+      const user_img = document.createElement("img");
+      user_img.classList.add("img");
+      user_img.setAttribute("src", user.avatarUrl);
+      profile.append(user_img);
+
+      const username = document.createElement("p");
+      username.classList.add("username");
+      username.innerText = user.name;
+      profile.append(user.name);
+
+      user_card.appendChild(profile);
+
+      // Repositories
+      const repoMarkup = repo.map((r) => {
+        const repos = document.createElement("div");
+        const repo_name = document.createElement("p");
+        const desc = document.createElement("p");
+      });
     })
     .catch(function (err) {
       console.error(err);
     });
 }
 
-function repoData(){
-  const repo_container = document.createElement('div')
-  repo_container.classList.add('repo_container')
+function repoData() {
+  const repo_container = document.createElement("div");
+  repo_container.classList.add("repo_container");
 
-  const profile = document.createElement('div')
-  profile.classList.add('profile')
-  const username = document.createElement('p')
-  username.classLisy.add('username')
-  const user_img = document.createElement('img')
-  user_img.classList.add('img')
+  const profile = document.createElement("div");
+  profile.classList.add("profile");
 
-  const repos = document.createElement('div')
-  const repo_name = document.createElement('p')
-  const desc = document.createElement('p')
+  const username = document.createElement("p");
+  username.classList.add("username");
 
-  document.body.appendChild(repo_container)
+  const user_img = document.createElement("img");
+  user_img.classList.add("img");
+
+  const repos = document.createElement("div");
+  const repo_name = document.createElement("p");
+  const desc = document.createElement("p");
+
+  document.body.appendChild(repo_container);
 }
