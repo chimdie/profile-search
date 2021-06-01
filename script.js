@@ -1,6 +1,11 @@
 const form = document.querySelector(".form");
 const query = document.querySelector(".query");
 const user_card = document.querySelector(".user_card");
+const btn = document.getElementById('menuBtn')
+
+btn.addEventListener('click', () => {
+  console.log('works')
+})
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,7 +22,7 @@ function getData() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer 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",
+      "Authorization": "Bearer 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",
     },
     body: JSON.stringify({
       query: `
@@ -26,24 +31,19 @@ function getData() {
                   edges {
                     node {
                       ... on User {
-                        name
                         avatarUrl
-                        bio
-                        location
-                        repositories(last: 10){
-                          nodes{
+                        name
+                        email
+                        repositories(first: 5) {
+                          nodes {
                             name
                             description
                             forkCount
-                            updatedAt
-                            stargazers{
-                              totalCount
-                            }
-                            primaryLanguage{
+                            primaryLanguage {
                               name
+                              color
                             }
                           }
-                          totalCount
                         }
                       }
                     }
@@ -79,15 +79,32 @@ function getData() {
       const username = document.createElement("p");
       username.classList.add("username");
       username.innerText = user.name;
-      profile.append(user.name);
+      profile.append(username);
+
+      const email = document.createElement("p");
+      email.classList.add("email");
+      email.innerText = user.email;
+      profile.append(email);
 
       user_card.appendChild(profile);
 
       // Repositories
-      const repoMarkup = repo.map((r) => {
+      repo.map((r) => {
         const repos = document.createElement("div");
+        repos.classList.add('repos')
+
+
         const repo_name = document.createElement("p");
+        repo_name.classList.add('repo_name')
+        repo_name.innerText = r.name
+        repos.append(repo_name)
+
         const desc = document.createElement("p");
+        desc.classList.add('desc')
+        desc.innerText = r.description
+        repos.append(desc)
+
+        user_card.appendChild(repos)
       });
     })
     .catch(function (err) {
