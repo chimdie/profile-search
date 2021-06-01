@@ -1,7 +1,6 @@
 # GITHUB Profile Search
 
-Created this for entry at [Buycoins](https://notion.so/) as a Frontend Developer role.
-*Worked with [GihubGraphql](https://api.github.com/graphql)
+Created this for entry at [Buycoins](https://notion.so/) as a Frontend Developer role - to use [GihubGraphql](https://api.github.com/graphql) and generate user profiles and their repositories. 
 
 ## Takeaways
 1. This is my first go at graghql and I must say it was a nice ride.
