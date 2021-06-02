@@ -80,7 +80,7 @@ a{
 .user_card {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .profile{
@@ -106,15 +106,15 @@ a{
 
 .main{
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 1fr;
 }
 
 .repo_container{
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  height: 20vh;
+  
 }
 .repos{
   display: flex;
