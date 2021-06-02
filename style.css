@@ -78,17 +78,13 @@ a{
 }
 
 .user_card {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: 1fr;
 }
 
 .profile{
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -108,11 +104,17 @@ a{
   font-style: italic;
 }
 
+.main{
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  grid-template-rows: 1fr 1fr;
+}
+
 .repo_container{
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  
+  height: 20vh;
 }
 .repos{
   display: flex;

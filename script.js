@@ -84,6 +84,11 @@ function getData() {
 
       user_card.appendChild(profile);
 
+      // Repo container
+      const main = document.createElement('div')
+      main.classList.add('main')
+    
+      user_card.append(main)
       // Repositories
       repo.map((rep) => {
         const repo_container = document.createElement("div");
@@ -105,7 +110,7 @@ function getData() {
         repo_container.appendChild(repos)
 
         repo_container.append(repos)
-        user_card.appendChild(repo_container);
+        main.append(repo_container)
       });
     })
     .catch(function (err) {
