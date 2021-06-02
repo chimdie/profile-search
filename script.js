@@ -1,11 +1,11 @@
 const form = document.querySelector(".form");
 const query = document.querySelector(".query");
 const user_card = document.querySelector(".user_card");
-const btn = document.getElementById('menuBtn')
+const btn = document.getElementById("menuBtn");
 
-btn.addEventListener('click', () => {
-  console.log('works')
-})
+btn.addEventListener("click", () => {
+  console.log("works");
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -22,7 +22,7 @@ function getData() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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",
+      Authorization: "Bearer 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",
     },
     body: JSON.stringify({
       query: `
@@ -63,10 +63,6 @@ function getData() {
       const user = data.data.search.edges[0].node;
       const repo = data.data.search.edges[0].node.repositories.nodes;
 
-      // Parent container
-      const repo_container = document.createElement("div");
-      repo_container.classList.add("repo_container");
-
       // Profile
       const profile = document.createElement("div");
       profile.classList.add("profile");
@@ -89,45 +85,30 @@ function getData() {
       user_card.appendChild(profile);
 
       // Repositories
-      repo.map((r) => {
-        const repos = document.createElement("div");
-        repos.classList.add('repos')
+      repo.map((rep) => {
+        const repo_container = document.createElement("div");
+        repo_container.classList.add("repo_container");
 
+        const repos = document.createElement("div");
+        repos.classList.add("repos");
 
         const repo_name = document.createElement("p");
-        repo_name.classList.add('repo_name')
-        repo_name.innerText = r.name
-        repos.append(repo_name)
+        repo_name.classList.add("repo_name");
+        repo_name.innerText = rep.name;
+        repos.append(repo_name);
+        repo_container.appendChild(repos)
 
         const desc = document.createElement("p");
-        desc.classList.add('desc')
-        desc.innerText = r.description
-        repos.append(desc)
+        desc.classList.add("desc");
+        desc.innerText = rep.description;
+        repos.append(desc);
+        repo_container.appendChild(repos)
 
-        user_card.appendChild(repos)
+        repo_container.append(repos)
+        user_card.appendChild(repo_container);
       });
     })
     .catch(function (err) {
       console.error(err);
     });
-}
-
-function repoData() {
-  const repo_container = document.createElement("div");
-  repo_container.classList.add("repo_container");
-
-  const profile = document.createElement("div");
-  profile.classList.add("profile");
-
-  const username = document.createElement("p");
-  username.classList.add("username");
-
-  const user_img = document.createElement("img");
-  user_img.classList.add("img");
-
-  const repos = document.createElement("div");
-  const repo_name = document.createElement("p");
-  const desc = document.createElement("p");
-
-  document.body.appendChild(repo_container);
 }
