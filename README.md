@@ -1,6 +1,6 @@
 # GITHUB Profile Search
 
-Created this for entry at [Buycoins](https://notion.so/) as a Frontend Developer role - to use [GihubGraphql](https://api.github.com/graphql) and generate user profiles and their repositories and here's is a live [Demo](https://github-abc.netlify.app/).<br /> 
+Created this for entry at [Buycoins](https://notion.so/) as a Frontend Developer role - to use [GihubGraphql](https://api.github.com/graphql) and generate user profiles and their repositories. Here's is a live [Demo](https://github-abc.netlify.app/).<br /> 
 PS: It's only for mobile😐
 
 ## Takeaways
