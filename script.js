@@ -22,7 +22,7 @@ function getData() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer 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",
+      Authorization: "Bearer _OAuth", // attach github authentication to start the app
     },
     body: JSON.stringify({
       query: `
